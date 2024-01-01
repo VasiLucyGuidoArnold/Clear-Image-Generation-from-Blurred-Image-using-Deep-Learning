@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Image Generation before Unclear Image</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #3498db; /* Updated heading color */
+        }
+
+        form {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            
+        }
+
+        img {
+            max-width: 400%;
+            height: auto;
+            display: block;
+            border: 1px solid #ddd;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Added styles for heading and background color */
+        h2 {
+            color: #333;
+        }
+
+        .image-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Clear Image Generation from Unclear Image</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="img">Choose an image:</label>
+        <input type="file" name="img" id="img">
+        <input type="submit" value="Upload">
+    </form>
+
+
+    <div class="image-container">
+        {% if original_img %}
+            <div class="image-section">
+                <h2>Original Blurred Image</h2>
+                <img src="{{ original_img }}" alt="Original Blurred Image">
+            </div>
+        {% endif %}
+
+        {% if deblurred_img %}
+            <div class="image-section">
+                <h2>Deblurred Image</h2>
+                <img src="{{ deblurred_img }}" alt="Deblurred Image">
+                <button class="download-btn" onclick="downloadImage('{{ deblurred_img }}')">Download Deblurred Image</button>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function downloadImage(imageUrl) {
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = function() {
+                var a = document.createElement('a');
+                a.href = window.URL.createObjectURL(xhr.response);
+                a.download = 'deblurred_image.png';
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            };
+            xhr.open('GET', imageUrl);
+            xhr.send();
+        }
+    </script>
+
+</body>
+</html>
