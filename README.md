@@ -37,7 +37,7 @@ Clear Image Generation from Blurred Image is a web application that showcases th
     python app.py
     ```
 
-5. Open your web browser and visit [http://localhost:5000/](http://localhost:5000/).
+5. Automatically it opens the website in local host othewise, Open your web browser and visit [http://localhost:5000/](http://localhost:5000/).
 
 6. Upload a blurred or unclear image and explore the results.
 
