@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clear Image Generation before Unclear Image</title>
+    <title>Clear Image Generation from Unclear Image</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -13,7 +13,7 @@
         }
 
         h1 {
-            color: #3498db; /* Updated heading color */
+            color: #3498db;
         }
 
         form {
@@ -50,11 +50,19 @@
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
-            
+        }
+
+        .image-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 40%;  /* Set the fixed width for both blurred and deblurred images */
+            margin: 0 auto;
         }
 
         img {
-            max-width: 400%;
+            width: 40%;  /* Set the width to 100% to fill the container */
             height: auto;
             display: block;
             border: 1px solid #ddd;
@@ -82,28 +90,24 @@
             background-color: #2980b9;
         }
 
-        /* Added styles for heading and background color */
         h2 {
             color: #333;
         }
 
-        .image-section {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        p {
+            color: #555;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Clear Image Generation from Blurred Image using Deep Learning</h1>
+    <h1>Clear Image Generation from Unclear Image</h1>
 
     <form action="/" method="post" enctype="multipart/form-data">
         <label for="img">Choose an image:</label>
         <input type="file" name="img" id="img">
         <input type="submit" value="Upload">
     </form>
-
 
     <div class="image-container">
         {% if original_img %}
@@ -117,6 +121,7 @@
             <div class="image-section">
                 <h2>Deblurred Image</h2>
                 <img src="{{ deblurred_img }}" alt="Deblurred Image">
+                <p>{{ scientist_description }}</p>
                 <button class="download-btn" onclick="downloadImage('{{ deblurred_img }}')">Download Deblurred Image</button>
             </div>
         {% endif %}
@@ -139,6 +144,5 @@
             xhr.send();
         }
     </script>
-
 </body>
 </html>
