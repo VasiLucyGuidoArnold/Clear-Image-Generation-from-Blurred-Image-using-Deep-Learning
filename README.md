@@ -8,10 +8,11 @@ Clear Image Generation from Blurred Image is a web application that showcases th
 
 Here are some demo images showcasing the functionality of your project:
 
-![Demo Image 1](demo_images/Demo_image(1).jpg)
-![Demo Image 2](demo_images/Demo_image(2).jpg)
-![Demo Image 3](demo_images/Demo_image(3).jpg)
-![Demo Image 3](demo_images/Demo_image(4).jpg)
+
+![Demo Image 2]([demo_images/Demo_image(1).jpg](https://github.com/VasiLucyGuidoArnold/Clear-Image-Generation-from-Blurred-Image-using-Deep-Learning/blob/main/demo_images/Demo_image(1).png))
+![Demo Image 3]([demo_images/Demo_image(2).jpg](https://github.com/VasiLucyGuidoArnold/Clear-Image-Generation-from-Blurred-Image-using-Deep-Learning/blob/main/demo_images/Demo_image(2).png))
+![Demo Image 3]([demo_images/Demo_image(3).jpg](https://github.com/VasiLucyGuidoArnold/Clear-Image-Generation-from-Blurred-Image-using-Deep-Learning/blob/main/demo_images/Demo_image(3).png))
+![Demo Image 3]([demo_images/Demo_image(4).jpg](https://github.com/VasiLucyGuidoArnold/Clear-Image-Generation-from-Blurred-Image-using-Deep-Learning/blob/main/demo_images/Demo_image(4).png))
 
 
 ## Features
