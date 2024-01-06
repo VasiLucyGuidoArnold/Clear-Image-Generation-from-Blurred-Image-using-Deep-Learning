@@ -8,10 +8,10 @@ Clear Image Generation from Blurred Image is a web application that showcases th
 
 Here are some demo images showcasing the functionality of your project:
 
-![Demo Image 1](demo_images/demo_image_1.jpg)
-![Demo Image 2](demo_images/demo_image_2.jpg)
-![Demo Image 3](demo_images/demo_image_3.jpg)
-![Demo Image 3](demo_images/demo_image_4.jpg)
+![Demo Image 1](demo_images/Demo_image(1).jpg)
+![Demo Image 2](demo_images/Demo_image(2).jpg)
+![Demo Image 3](demo_images/Demo_image(3).jpg)
+![Demo Image 3](demo_images/Demo_image(4).jpg)
 
 
 ## Features
